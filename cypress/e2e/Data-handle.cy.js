@@ -5,21 +5,19 @@ describe('Handling data', ()=>{
     })
     it('data handle from table', () =>{
     
-     var userDetails=[];
-     let numb=0;
-     cy.get('#thumbnail-1 td').each(($el, index, $list) =>{
-        userDetails[index]=$el.text()
-     }).then(()=>{
-        var i;
-        for(i =0; userDetails.length; i++){
-            if(Number(userDetails[i])){
-                numb+= Number(userDetails[i])
-            }
-           
+    //  var userDetails=[];
+    //  let numb=0;
+     cy.get("#thumbnail-1 table[id='t02'] tr:nth-child(4)").each(($el, index, $list) =>{
+        const text=$el.text()
+        if (text.includes("Woods"))
+        {
+            cy.get("#thumbnail-1 table[id='t02'] tr:nth-child(4) td:nth-child(3)").eq(index).then((age)=>{
+               const Age= Number(age.text())
+               cy.log(Age)
+               expect(Age).to.eq(80)
+            })
         }
-        cy.log('found the total age '+ numb)
-        //expect(numb).to.eql(322)
-             })
+            })
     
          })
 
