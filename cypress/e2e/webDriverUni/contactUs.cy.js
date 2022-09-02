@@ -1,10 +1,8 @@
-///<reference types="cypress"/>
-
 describe("open contact page", function(){
 
     beforeEach(function(){
       cy.visit("http://webdriveruniversity.com/Contact-Us/contactus.html")
-        cy.fixture('dataDriven/example').then(data =>{
+        cy.fixture('example').then(data =>{
             this.data=data;
           //  globalThis.data=data;
         })
