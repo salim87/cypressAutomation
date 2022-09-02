@@ -1,4 +1,4 @@
-describe('Data driven test', ()=>{
+describe('Fixures test', ()=>{
     before('opening the url', ()=>{
         cy.visit('/')
         cy.get("#contact-us").invoke('removeAttr', 'target').click({force:true})
