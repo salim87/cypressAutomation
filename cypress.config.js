@@ -9,4 +9,7 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
   },
+  env:{
+    CYPRESS_BASE_URL: 'https://webdriveruniversity.com/'
+  }
 })
