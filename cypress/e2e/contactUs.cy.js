@@ -17,6 +17,7 @@ describe("open contact page", function(){
       
       homePage.creatContactUsPage(this.data.first_name, this.data.last_name, this.data.email, this.data.body )
       homePage.click_submit()
+      cy.screenshot()
       // cy.visit("http://webdriveruniversity.com")
       // cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true})
         // cy.get('[name="first_name"]').type(this.data.first_name);

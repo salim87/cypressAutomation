@@ -1,6 +1,6 @@
 export class HomePage{
     visitUrl(){
-        cy.visit(Cypress.env('CYPRESS_BASE_URL'))
+        cy.visit('/')
     }
     clickOn_ContactUs_button(){
         cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true})
