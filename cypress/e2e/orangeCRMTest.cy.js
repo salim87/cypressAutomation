@@ -1,9 +1,9 @@
 import { Locators } from "./pages/locators.cy";
 import { Orange_HP } from "./pages/orange_page.cy";
-import { AddEmployee } from "./pages/addEmployee.cy";
+import { AddEmplyeeList } from "./pages/addEmployeeList.cy";
 
 const orangeCRM= new Orange_HP();
-const addEmplyee= new AddEmployee();
+const addEmployeeList = new AddEmplyeeList();
 
 describe('test orangeCRM page', ()=>{ 
     
@@ -17,31 +17,45 @@ describe('test orangeCRM page', ()=>{
     })
 
     it('Testing OrangeCRM page', ()=>{
-       // cy.fixture('users').as('data')
+       // cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+      //  cy.fixture('users').as('data')
         cy.get('@data').then((user)=>{
             orangeCRM.enterUsername(Locators.userNameLoc, user.Username)
             orangeCRM.enterPassword(Locators.passwordLoc, user.Password)
             orangeCRM.clickLgnBtn(Locators.loginBtnLoc)
+           cy.log('completed the login the url')
         })
-        cy.get(':nth-child(3) > .oxd-topbar-body-nav-tab-item').click()
-        cy.get('.--visited').click()
-       //addEmplyee.clickAddEmplyBtn(Locators.addEmplBtn)
-      // cy.once('uncaught:exception', () => false);
-
+        
+       // addEmplyee.clickAddEmplyBtn(Locators.addEmplBtn)
+        //cy.once('uncaught:exception', () => false);
+        //cy.wait(5000)
+       cy.log('landed to the new page')
     })
 
     it('Add employee', ()=>{
-       // cy.fixture('addEmployee').as('employeeData')
-        cy.get('@employeeData').then((employee)=>{
-             cy.once('uncaught:exception', () => false);
-        //    addEmplyee.clickAddEmplyBtn(Locators.addEmplBtn)
-            cy.wait(5000)
+        cy.fixture('addEmployeeList').as('employmentData')
+        // addEmplyee.clickAddEmplyBtn(Locators.addEmplBtn)
+        // cy.wait(5000)
+        cy.get('@employmentData').then((employeeList)=>{
+            Cypress. on('uncaught:exception', (err, runnable) => { return false; });
 
-            addEmplyee.enterFirstName(Locators.firstnameLoc, employee.firstname, {timeout:10000})
-            addEmplyee.enterMiddleName(Locators.middlenameLoc, employee.middlename)
-            addEmplyee.enterLastName(Locators.lastnameLoc, employee.lastname)
-            addEmplyee.enterEmpId(Locators.empIdLoc, employee.EmpId)
-            addEmplyee.clickSavebtn(Locators.saveBtnLoc)
+
+            addEmployeeList.enterEmployeeName(Locators.employeenameLoc, employeeList.EmployeeName)
+            cy.wait(3000)
+            addEmployeeList.enterEmployeeId(Locators.employeeidLoc, employeeList.EmployeeId)
+            cy.wait(3000)
+            addEmployeeList.selectEmploymentStatus(Locators.selectEmploymentStatusLoc)
+            cy.wait(3000)
+            addEmployeeList.selectCurrentOrPastEmploymentStatus(Locators.currenOrPastEmployeeLoc)
+            cy.wait(3000)
+            addEmployeeList.enterSupervisorname(Locators.superVisorNameLoc, employeeList.supervisorName)
+            cy.wait(3000)
+            addEmployeeList.selectJobTitle(Locators.jobTitleLoc)
+            cy.wait(3000)
+            addEmployeeList.selectSubUnitName(Locators.subUnitLoc)
+            cy.wait(3000)
+            addEmployeeList.clickSerceBtn(Locators.searchBtnLoc)
+
         })
     })
 })

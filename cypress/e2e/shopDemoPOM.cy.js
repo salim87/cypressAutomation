@@ -21,6 +21,11 @@ describe('shopDemoPAgObjectTest', ()=>{
             //Checking whetther the new URL 
             // which include /my-account
             cy.url().should('include', '/my-account');
+
+        //Accessing custom commands
+        //For loop for accessing product names for fixture file
+        
+        
         
         })
     })

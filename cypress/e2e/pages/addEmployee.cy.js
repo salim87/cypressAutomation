@@ -1,7 +1,9 @@
-export class AddEmployee{
+export class AddEmployeeList{
+
 
     clickAddEmplyBtn(locator){
-        cy.get(locator).click()
+        cy.wait(5000)
+        cy.get(locator).click({forece:true})
     }
     enterFirstName(locator, firstname){
         cy.get(locator).type(firstname)
@@ -22,4 +24,7 @@ export class AddEmployee{
     clickSavebtn(locator){
         cy.get(locator).click()
     }
+    
+
+    
 }
