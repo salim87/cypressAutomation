@@ -10,19 +10,20 @@ describe('Testing tools qa demo', ()=>{
 
     it('executing tools qa register page', ()=>{
         cy.get('@toolsQaData').then((user)=>{
-            cy.get('#reg_username').type(user.Username);
-            cy.get('#reg_email').type(user.Email);
-            cy.get('#reg_password').type(user.Password)
+            cy.get('#username').type(user.Username);
+          //  cy.get('#reg_email').type(user.Email);
+            cy.get('#password').type(user.Password)
 
-            cy.get('.woocommerce-Button').should('have.attr','disabled', 'disabled') 
-            cy.get('.woocommerce-Button').should('be.disabled')
+           // cy.get('.woocommerce-Button').should('have.attr','disabled', 'disabled') 
+          //  cy.get('.woocommerce-Button').should('be.disabled')
 
-            cy.get('#reg_password').type(user.NewPassword)
+          //  cy.get('#reg_password').type(user.NewPassword)
 
-            cy.get('.woocommerce-Button').click();
+            cy.get("button[value='Log in']").click();
 
-            //Checking whether the Registration is successful and whether UserName is populated under login section
-            cy.get('#username').should('have.value', user.Username);
+            //Checking whetther the new URL 
+            // which include /my-account
+            cy.url().should('include', '/my-account');
         
         })
     })

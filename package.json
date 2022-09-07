@@ -4,7 +4,10 @@
   "description": "This is cypress framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAlltest-headless": "npx cypress run",
+    "triggerAlltest-chrome": "npx cypress run --browser chrome",
+
+    "triggerAlltest-dashboard":"npx cypress run --spec cypress/e2e/* --record --key 770b0ac4-2b34-4c50-a8b0-ecb6bb17bee1"
   },
   "author": "Salim",
   "license": "ISC",
