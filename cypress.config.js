@@ -3,7 +3,7 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   projectId: '6x242j',
   defaultCommandTimeout: 5000,
-  pageLoadTimeout: 10000,
+  pageLoadTimeout: 20000,
   e2e: {
     baseUrl: 'https://webdriveruniversity.com/',
     // We've imported your old cypress plugins here.

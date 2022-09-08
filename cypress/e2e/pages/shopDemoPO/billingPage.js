@@ -7,8 +7,12 @@ export class BillingPage {
         return cy.get('#billing_last_name') 
     }
 
-    getSelectCountry(){
-        return cy.get('#select2-billing_country-container')
+    getCountrySearchbox(){
+        return cy.get("input[role='combobox']")
+    }
+
+    getCountryDropdown(){
+        return ct.get('#select2-billing_country-container')
     }
     getBillingAddress1(){
         return cy.get('#billing_address_1') 

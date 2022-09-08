@@ -3,5 +3,14 @@
     "Username": "salim87",
     "Email":"salimdls@outlook.com",
     "Password": "rakinukg5",
-    "NewPassword":"cypresstutorials77"
+    "NewPassword":"cypresstutorials77",
+    "productName":[["blue denim","34","Black"],
+                    ["playboy","40","Grey"]],
+    "BillingFirstName":"Tas",
+    "BillingLastName":"Prionti",
+    "BillingCountry":"USA",
+    "StreetAddress":"9471 Wolf Pack tr",
+    "City":"COS",
+    "PostalCode":"80920",
+    "Phone":"1111111111"
 }
