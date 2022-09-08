@@ -8,9 +8,10 @@
                     ["playboy","40","Grey"]],
     "BillingFirstName":"Tas",
     "BillingLastName":"Prionti",
-    "BillingCountry":"USA",
+    "BillingCountry":"United States (US)",
     "StreetAddress":"9471 Wolf Pack tr",
     "City":"COS",
+    "state":"Colorado",
     "PostalCode":"80920",
     "Phone":"1111111111"
 }
