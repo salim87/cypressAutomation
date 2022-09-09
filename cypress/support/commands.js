@@ -31,8 +31,8 @@ const { ProductPage } = require("../e2e/pages/shopDemoPO/productPage");
         })
        //select the size and color
 //     //adding the products to cart
-        product.getSelectSize().select(size)   
         product.getSelectColor().select(color)
+        product.getSelectSize().select(size) 
         product.getAddToCartButton().click()
 
     })
