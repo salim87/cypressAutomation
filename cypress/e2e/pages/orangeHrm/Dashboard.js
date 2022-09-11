@@ -17,4 +17,8 @@ export class Dashboard{
         cy.get("div[role='rowgroup']>div").contains(employeeName).should('not.be.checked')
         cy.get("div[role='rowgroup']>div").contains(employeeName).should('have.text', employeeName)
     }
+
+    clickAddUser(){
+        cy.get('.orangehrm-header-container > .oxd-button').should('be.visible').click({force:true})
+    }
 }

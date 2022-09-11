@@ -1,4 +1,4 @@
-const { Login } = require("./pages/orangeHrm/Login");
+const { Login } = require("../pages/orangeHrm/Login");
 
 const login= new Login();
 describe('orangeHRM page PO', () => {
@@ -6,7 +6,7 @@ describe('orangeHRM page PO', () => {
     beforeEach('landing to the login page',() => {
         login.navigate()
     });
-    it('shoul not use valid credentials', () => {
+    it('should not use valid credentials', () => {
         
         login.login('Admin', 'admin')
         login.validateInvalidCredentials('Invalid credentials')
