@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 const { BillingPage } = require("./pages/shopDemoPO/billingPage")
 const { Checkout } = require("./pages/shopDemoPO/checkout")
 const { Homepage } = require("./pages/shopDemoPO/homepage")
@@ -31,7 +32,9 @@ describe('shopDemoPAgObjectTest', ()=>{
         //For loop for accessing product names for fixture file
         this.user.productName.forEach(function(element){
             cy.productInfo(element[0], element[1], element[2])
+    
         })
+        
         
         //End to End Test Completion including Checkout and Placing Order
         checkoutPage.getCartBtn().click()
