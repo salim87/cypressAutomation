@@ -48,9 +48,6 @@ const { ProductPage } = require("../e2e/pages/shopDemoPO/productPage");
             }
             });
 
-            product.getSelectSize().select(size)
-            product.getSelectColor().select(color)
-            product.getAddToCartButton().click()
     });
     
     
