@@ -12,11 +12,11 @@ export class ProductPage{
     }
 
     getSelectSize(){
-        return cy.get("label[for='pa_size']")
+        return cy.get("#pa_size")
     }
 
     getSelectColor(){
-        return cy.get("label[for='pa_color']")
+        return cy.get("#pa_color")
     }
 
     getAddToCartButton(){
